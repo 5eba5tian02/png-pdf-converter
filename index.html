@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Content Security Policy -->
+<meta http-equiv="Content-Security-Policy"
+      content="default-src 'self';
+               script-src 'self' https://cdnjs.cloudflare.com 'unsafe-inline';
+               style-src 'self' 'unsafe-inline';
+               img-src 'self' blob:;
+               object-src 'none';
+               base-uri 'self';">
+
+<!-- Canonical URL -->
+<link rel="canonical" href="https://yourdomain.com/">
+
+<!-- Title & Description -->
+<title>Free PNG to PDF Converter – Fast, Secure, Offline Tool</title>
+<meta name="description" content="Convert PNG to PDF or PDF to PNG instantly. 100% free, secure, offline, and privacy‑friendly. No uploads, no tracking.">
+
+<!-- Preload CSS for faster rendering -->
+<link rel="preload" href="style.css" as="style">
+<link rel="stylesheet" href="style.css" media="screen">
+
+<!-- Open Graph (Facebook, LinkedIn) -->
+<meta property="og:title" content="Free PNG to PDF Converter – Offline & Secure">
+<meta property="og:description" content="Convert PNG to PDF or PDF to PNG instantly. No uploads, no tracking. Everything happens offline.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://yourdomain.com/">
+<meta property="og:image" content="https://yourdomain.com/preview.png">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Free PNG to PDF Converter – Offline & Secure">
+<meta name="twitter:description" content="Convert PNG to PDF or PDF to PNG instantly. No uploads, no tracking. Everything happens offline.">
+<meta name="twitter:image" content="https://yourdomain.com/preview.png">
+
+<!-- SoftwareApplication Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "PNG to PDF Converter",
+  "operatingSystem": "Any (Web-based)",
+  "applicationCategory": "Utility",
+  "description": "Convert PNG to PDF or PDF to PNG instantly. 100% free, offline, and privacy-friendly.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
+</script>
+
+<!-- FAQ Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is this PNG to PDF converter free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, it is 100% free and works offline in your browser."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are my files uploaded to a server?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. All conversions happen locally on your device for maximum privacy."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does this converter work offline?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Once the page is loaded, the entire conversion process works offline without an internet connection."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is there a file size limit for PNG to PDF conversion?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. To ensure smooth performance, PNG files larger than 20 MB are not processed."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I convert multiple PNG files into one PDF?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. You can select multiple PNG images and they will be merged into a single PDF document."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does this tool support converting PDF pages into PNG images?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. You can upload a PDF and each page will be converted into a separate PNG image."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is my data safe when using this converter?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Your files never leave your device. No uploads, no tracking, and no data collection of any kind."
+      }
+    }
+  ]
+}
+</script>
+
+<!-- External Libraries -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"
+        integrity="sha512-q+4liFwdPC/bNdhUpZx6aXDx/h77yEQtn4I1slHydcbZK34nLaR3cAeYSJshoxIOq3mjEf7xJE8YWIUHMn+oCQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"
+        integrity="sha512-z8IYLHO8bTgFqj+yrPyIJnzBDf7DDhWwiEsk4sY+Oe6J2M+WQequeGS7qioI5vT6rXgVRb4K1UVQC5ER7MKzKQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js"
+        integrity="sha512-BbrZ76UNZq5BhH7LL7pn9A4TKQpQeNCHOo65/akfelcIBbcVvYWOFQKPXIrykE3qZxYjmDX573oa4Ywsc7rpTw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Free, Safe, Offline PNG to PDF Converter</h1>
+
+    <div class="explanation">
+        Convert PNG images to a single PDF or convert single PDF pages to PNGs — all directly on your device.
+        No uploads, no tracking, no servers. Everything happens locally in your browser for maximum privacy.
+    </div>
+
+    <div class="converter-field">
+        <div class="file-drop-zone">
+            Drag & Drop your PNG or PDF files here<br>
+            or click “Select Files”
+        </div>
+
+        <div class="buttons">
+            <button class="secondary btn-yellow">1. Select Files</button>
+            <button class="secondary btn-red">Clear</button>
+        </div>
+
+        <div class="mode-dropdown">
+            <select id="conversion-mode">
+                <option value="png-to-pdf">PNG → PDF</option>
+                <option value="pdf-to-png">PDF → PNG</option>
+            </select>
+        </div>
+
+        <div class="buttons" style="margin-top: 25px;">
+            <button class="primary">2. Convert</button>
+            <button class="primary btn-green">3. Save</button>
+        </div>
+
+        <div class="status-area">
+            No files selected yet.
+        </div>
+    </div>
+
+    <div class="info-section">
+    <h2>How to use this converter</h2>
+    <ol>
+        <li>Click <strong>Select Files</strong> or drag your PNG or PDF files into the drop zone.</li>
+        <li>Choose your mode: <strong>PNG → PDF</strong> or <strong>PDF → PNG</strong>.</li>
+        <li>Click <strong>Convert</strong> to process your files locally.</li>
+        <li>When the conversion is complete, click <strong>Save</strong> to download your results.</li>
+    </ol>
+    <p>All processing happens directly in your browser — nothing is uploaded.</p>
+ </div>
+
+ <div class="info-section">
+    <h2>Why choose an offline PNG to PDF converter?</h2>
+    <p>
+        Most online converters require you to upload your files to a remote server, which can be slow, risky, 
+        and inconvenient. An offline converter like this one processes everything directly in your browser, 
+        giving you full control over your documents without relying on external services.
+    </p>
+    <ul>
+        <li><strong>Better privacy:</strong> Your files never leave your device, so sensitive documents stay secure.</li>
+        <li><strong>Faster performance:</strong> No upload or download delays — conversions happen instantly.</li>
+        <li><strong>Works without internet:</strong> Once loaded, the tool functions completely offline.</li>
+        <li><strong>No file size restrictions:</strong> You’re not limited by server upload caps or bandwidth.</li>
+        <li><strong>No ads, no tracking:</strong> A clean, distraction‑free experience focused entirely on your task.</li>
+    </ul>
+    <p>
+        If you value speed, privacy, and reliability, an offline PNG to PDF converter is the best possible choice.
+    </p>
+</div>
+
+ <div class="info-section">
+    <h2>Privacy advantages — your files never leave your device</h2>
+    <p>
+        This converter is fully offline. Your images and documents are processed directly in your browser using 
+        secure, open‑source libraries. Nothing is uploaded, stored, or sent to any server.
+    </p>
+    <ul>
+        <li>No tracking</li>
+        <li>No analytics</li>
+        <li>No cloud processing</li>
+        <li>No hidden data collection</li>
+    </ul>
+    <p>
+        Your files stay on your device at all times, giving you maximum privacy and security.
+    </p>
+</div>
+
+    <div class="further-explanation">
+        <h2>How it works:</h2>
+        • Multiple PNGs are merged into one PDF.<br>
+        • PDF pages are extracted as individual PNG images.<br>
+        • All processing is done locally using browser‑based libraries like pdf-lib and pdf.js.<br>
+        • Works offline once loaded.
+    </div>
+
+    <div class="info-section">
+    <h2>What is PNG? What is PDF?</h2>
+
+    <h3>What is a PNG?</h3>
+    <p>
+        PNG (Portable Network Graphics) is a high‑quality image format that supports lossless compression and transparency. 
+        It is ideal for screenshots, graphics, UI elements, and images where sharp detail matters.
+    </p>
+
+    <h3>What is a PDF?</h3>
+    <p>
+        PDF (Portable Document Format) is a universal document format designed to look the same on every device. 
+        PDFs are perfect for printing, sharing multi‑page documents, and combining multiple images into one file.
+    </p>
+</div>
+
+    <div class="why-converting">
+        <h2> PDF vs. PNG — When to use which format:</h2>
+        <ul>
+            <li><h3>Use PDF when:</h3>
+                <ul>
+                    <li>You want a multi‑page document</li>
+                    <li>You need consistent formatting across devices</li>
+                    <li>You want to combine several images into one file</li>
+                    <li>You need a format ideal for printing</li>
+                </ul>
+            </li>
+            <li><h3>Use PNG when:</h3>
+                <ul>
+                    <li>You need high‑quality images with no compression loss</li>
+                    <li>You want transparency support</li>
+                    <li>You need individual pages as separate images</li>
+                    <li>You want a format ideal for graphics, screenshots, or UI elements</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="info-section">
+    <h2>Benefits of offline conversion</h2>
+    <ul>
+        <li>No internet required — works even without a connection</li>
+        <li>Instant processing with no upload delays</li>
+        <li>No file size limits imposed by servers</li>
+        <li>Full control over your files at all times</li>
+        <li>Better performance because everything runs locally in your browser</li>
+    </ul>
+</div>
+
+</div>
+
+
+<script src="app.js" defer></script>
+
+</body>
+</html>
