@@ -24,7 +24,7 @@ selectBtn.addEventListener("click", () => {
     const input = document.createElement("input");
     input.type = "file";
     input.multiple = true;
-    input.accept = ".png, .pdf";
+    input.accept = ".png, .jpg, .jpeg, .heic, .heif, .pdf";
     input.onchange = () => {
         selectedFiles = Array.from(input.files);
         updateStatus();
