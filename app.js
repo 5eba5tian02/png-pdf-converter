@@ -89,8 +89,19 @@ async function convertPngToPdf() {
         const bytes = await file.arrayBuffer();
         const pngImage = await pdfDoc.embedPng(bytes);
 
-        const page = pdfDoc.addPage([pngImage.width, pngImage.height]);
-        page.drawImage(pngImage, { x: 0, y: 0, width: pngImage.width, height: pngImage.height });
+        let img;
+
+        if (file.type === "image/png") {
+        img = await pdfDoc.embedPng(bytes);
+        } else if (file.type === "image/jpeg") {
+        img = await pdfDoc.embedJpg(bytes);
+        } else {
+        updateStatus("Unsupported image format for PNG→PDF.");
+        return;
+  }
+
+const page = pdfDoc.addPage([img.width, img.height]);
+page.drawImage(img, { x: 0, y: 0, width: img.width, height: img.height });
     }
 
     const pdfBytes = await pdfDoc.save();
