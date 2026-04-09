@@ -83,31 +83,30 @@ async function convertPngToPdf() {
     for (const file of selectedFiles) {
 
         if (file.size > 20 * 1024 * 1024) {
-        updateStatus("File too large (max 20MB).");
-        return;
-         }
-        const bytes = await file.arrayBuffer();
-        const pngImage = await pdfDoc.embedPng(bytes);
+            updateStatus("File too large (max 20MB).");
+            return;
+        }
 
+        const bytes = await file.arrayBuffer();
         let img;
 
         if (file.type === "image/png") {
-        img = await pdfDoc.embedPng(bytes);
+            img = await pdfDoc.embedPng(bytes);
         } else if (file.type === "image/jpeg") {
-        img = await pdfDoc.embedJpg(bytes);
+            img = await pdfDoc.embedJpg(bytes);
         } else {
-        updateStatus("Unsupported image format for PNG→PDF.");
-        return;
-  }
+            updateStatus("Unsupported image format for PNG→PDF.");
+            return;
+        }
 
-const page = pdfDoc.addPage([img.width, img.height]);
-page.drawImage(img, { x: 0, y: 0, width: img.width, height: img.height });
+        const page = pdfDoc.addPage([img.width, img.height]);
+        page.drawImage(img, { x: 0, y: 0, width: img.width, height: img.height });
     }
 
     const pdfBytes = await pdfDoc.save();
     convertedOutput = new Blob([pdfBytes], { type: "application/pdf" });
 
-    updateStatus("PNG files successfully converted to PDF.");
+    updateStatus("Images successfully converted to PDF.");
 }
 
 // -------------------------------
@@ -158,9 +157,10 @@ convertBtn.addEventListener("click", async () => {
     const mode = modeSelect.value;
 
     if (mode === "png-to-pdf") {
-        const allPng = selectedFiles.every(f => f.type === "image/png");
-        if (!allPng) {
-            updateStatus("PNG → PDF requires only PNG files.");
+        const allowed = ["image/png", "image/jpeg", "image/heic", "image/heif"];
+        const allImages = selectedFiles.every(f => allowed.includes(f.type));
+        if (!allImages) {
+            updateStatus("Dataconvertion requires other fileformat.");
             return;
         }
         await convertPngToPdf();
