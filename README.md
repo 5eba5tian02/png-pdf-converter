@@ -5,6 +5,7 @@ Static HTML Project; Converts Pngs to Pdfs; Monetization via Monetag; Hosting vi
 - share button for social media
 - rating website
 - Allowing to input JPG, JPEG and other common Image dataformats
+- Allowing HEIC and HEIF dataformats
 
 ### other dataformats: 
 
