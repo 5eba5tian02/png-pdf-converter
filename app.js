@@ -3,13 +3,29 @@ pdfjsLib.GlobalWorkerOptions.workerSrc =
   "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
 
 
-  async function convert(file) {
-    const result = await heic2any({
-      blob: file,
-      useWorker: false
-    });
-    return result;
+ import { heicTo } from "heic-to"
+
+const file = field.files[0]
+
+const jpeg = await heicTo({
+  blob: file,
+  type: "image/jpeg",
+  quality: 0.5
+})
+
+const png = await heicTo({
+  blob: file,
+  type: "image/png",
+  quality: 0.5
+})
+
+const bitmap = await heicTo({
+  blob: file,
+  type: "bitmap",
+  options: {
+    imageOrientation: "flipY"
   }
+})
 
 
 
