@@ -2,6 +2,17 @@
 pdfjsLib.GlobalWorkerOptions.workerSrc =
   "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
 
+
+  async function convert(file) {
+    const result = await heic2any({
+      blob: file,
+      useWorker: false
+    });
+    return result;
+  }
+
+
+
 window.addEventListener("dragover", e => e.preventDefault());
 window.addEventListener("drop", e => e.preventDefault());
 
