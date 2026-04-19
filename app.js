@@ -95,11 +95,17 @@ function updateStatus(msg) {
 async function convertPngToPdf() {
     const pdfDoc = await PDFLib.PDFDocument.create();
 
-    for (const file of selectedFiles) {
+    for (let file of selectedFiles) {
 
         if (file.size > 20 * 1024 * 1024) {
             updateStatus("File too large (max 20MB).");
             return;
+        }
+
+        // Convert HEIC → PNG first
+        if (file.type === "image/heic" || file.type === "image/heif") {
+            updateStatus("Converting HEIC to PNG...");
+            file = await convertHeicToPngBlob(file);
         }
 
         const bytes = await file.arrayBuffer();
@@ -123,6 +129,11 @@ async function convertPngToPdf() {
 
     updateStatus("Images successfully converted to PDF.");
 }
+
+
+    
+
+  
 
 // -------------------------------
 // PDF → PNG
