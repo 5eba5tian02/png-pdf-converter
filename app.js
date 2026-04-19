@@ -4,25 +4,18 @@ pdfjsLib.GlobalWorkerOptions.workerSrc =
 
 const file = field.files[0]
 
-const jpeg = await heicTo({
-  blob: file,
-  type: "image/jpeg",
-  quality: 0.5
-})
+async function convertHeicToPngBlob(file) {
+    const pngBlob = await window.heicTo({
+        blob: file,
+        type: "image/png",
+        quality: 1.0
+    });
 
-const png = await heicTo({
-  blob: file,
-  type: "image/png",
-  quality: 0.5
-})
+    return pngBlob;
+}
 
-const bitmap = await heicTo({
-  blob: file,
-  type: "bitmap",
-  options: {
-    imageOrientation: "flipY"
-  }
-})
+
+
 
 
 
