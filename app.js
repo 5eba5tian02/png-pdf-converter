@@ -2,6 +2,40 @@
 pdfjsLib.GlobalWorkerOptions.workerSrc =
   "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
 
+// -------------------------------
+// DEBUG CONSOLE → UI OUTPUT
+// -------------------------------
+(function () {
+    const originalLog = console.log;
+    const originalError = console.error;
+    const originalWarn = console.warn;
+
+    function writeToUI(type, msg) {
+        const area = document.querySelector(".status-area");
+        if (!area) return;
+
+        const time = new Date().toLocaleTimeString();
+        area.textContent += `\n[${type}] ${time}: ${msg}`;
+        area.scrollTop = area.scrollHeight;
+    }
+
+    console.log = function (...args) {
+        originalLog.apply(console, args);
+        writeToUI("LOG", args.join(" "));
+    };
+
+    console.error = function (...args) {
+        originalError.apply(console, args);
+        writeToUI("ERROR", args.join(" "));
+    };
+
+    console.warn = function (...args) {
+        originalWarn.apply(console, args);
+        writeToUI("WARN", args.join(" "));
+    };
+})();
+
+
 async function convertHeicToPngBlob(file) {
     const pngBlob = await window.heicTo({
         blob: file,
