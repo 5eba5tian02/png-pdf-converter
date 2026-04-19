@@ -2,9 +2,6 @@
 pdfjsLib.GlobalWorkerOptions.workerSrc =
   "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
 
-
- import { heicTo } from "heic-to"
-
 const file = field.files[0]
 
 const jpeg = await heicTo({
