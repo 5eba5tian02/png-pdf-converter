@@ -40,7 +40,7 @@ selectBtn.addEventListener("click", () => {
     const input = document.createElement("input");
     input.type = "file";
     input.multiple = true;
-    input.accept = ".png, .jpg, .jpeg, .heic, .heif, .pdf";
+    input.accept = ".png, .jpg, .jpeg, .heic, .heif, .pdf"; // .heic-sequence, .heif-sequence, .octet-stream"; 
     input.onchange = () => {
         selectedFiles = Array.from(input.files);
         updateStatus();
@@ -197,7 +197,7 @@ convertBtn.addEventListener("click", async () => {
   ""
 ];
         const allImages = selectedFiles.every(f => allowed.includes(f.type));
-        console.log(allImages);
+        //console.log(allImages.type);
         if (!allImages) {
             updateStatus("Dataconvertion requires other fileformat.");
             return;
