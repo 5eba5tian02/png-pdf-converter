@@ -13,11 +13,6 @@ async function convertHeicToPngBlob(file) {
     return pngBlob;
 }
 
-
-
-
-
-
 window.addEventListener("dragover", e => e.preventDefault());
 window.addEventListener("drop", e => e.preventDefault());
 
@@ -40,7 +35,7 @@ selectBtn.addEventListener("click", () => {
     const input = document.createElement("input");
     input.type = "file";
     input.multiple = true;
-    input.accept = ".png, .jpg, .jpeg, .heic, .heif, .pdf"; // .heic-sequence, .heif-sequence, .octet-stream"; 
+    input.accept = ".png, .jpg, .jpeg, .HEIC, .heif, .pdf"; // .heic-sequence, .heif-sequence, .octet-stream"; 
     input.onchange = () => {
         selectedFiles = Array.from(input.files);
         updateStatus();
@@ -189,7 +184,7 @@ convertBtn.addEventListener("click", async () => {
         const allowed = [
   "image/png",
   "image/jpeg",
-  "image/heic",
+  "image/HEIC",
   "image/heif",
   "image/heic-sequence",
   "image/heif-sequence",
