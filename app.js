@@ -118,6 +118,7 @@ async function convertPngToPdf() {
             img = await pdfDoc.embedJpg(bytes);
         } else {
             updateStatus("Unsupported image format for PNG→PDF.");
+            console.log(file.type);
             return;
         }
 
