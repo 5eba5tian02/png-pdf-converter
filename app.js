@@ -184,7 +184,16 @@ convertBtn.addEventListener("click", async () => {
     const mode = modeSelect.value;
 
     if (mode === "png-to-pdf") {
-        const allowed = ["image/png", "image/jpeg", "image/heic", "image/heif"];
+        const allowed = [
+  "image/png",
+  "image/jpeg",
+  "image/heic",
+  "image/heif",
+  "image/heic-sequence",
+  "image/heif-sequence",
+  "application/octet-stream", // many HEIC files use this
+  ""
+];
         const allImages = selectedFiles.every(f => allowed.includes(f.type));
         console.log(allImages);
         if (!allImages) {
