@@ -186,6 +186,7 @@ convertBtn.addEventListener("click", async () => {
     if (mode === "png-to-pdf") {
         const allowed = ["image/png", "image/jpeg", "image/heic", "image/heif"];
         const allImages = selectedFiles.every(f => allowed.includes(f.type));
+        console.log(allImages);
         if (!allImages) {
             updateStatus("Dataconvertion requires other fileformat.");
             return;
