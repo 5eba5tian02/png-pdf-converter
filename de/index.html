@@ -1,5 +1,174 @@
 
-<div class="container">
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta http-equiv="Content-Security-Policy"
+      content="
+        default-src 'self';
+        script-src 'self' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://nap5k.com https://tzegilo.com https://plausible.io 'unsafe-inline';
+        worker-src 'self' blob:;
+        connect-src 'self' https://nap5k.com https://my.rtmark.net https://jhnwr.com https://plausible.io;
+        img-src 'self' data: blob: https:;
+        style-src 'self' 'unsafe-inline';
+        object-src 'none';
+        base-uri 'self';
+      ">
+
+
+
+
+<!-- Plausible Tag, Tracks Traffic of website-->
+<script defer data-domain="freepng2pdf.com" src="https://plausible.io/js/script.js"></script>
+
+<!-- Privacy-friendly analytics by Plausible -->
+<script async src="https://plausible.io/js/pa-R2IvC_NFpq3IMiUdwXXiY.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init()
+</script>
+
+
+
+<!-- Canonical URL -->
+<link rel="canonical" href="https://www.freepng2pdf.com/">
+
+<!-- Title & Description -->
+<title>Free PNG to PDF Converter – Fast, Secure, Offline Tool</title>
+<meta name="description" content="Convert PNG to PDF or PDF to PNG instantly. 100% free, secure, offline, and privacy‑friendly. No uploads, no tracking.">
+
+<!-- Preload CSS for faster rendering -->
+<link rel="preload" href="style.css" as="style">
+<link rel="stylesheet" href="style.css" media="screen">
+
+<!-- Open Graph (Facebook, LinkedIn) -->
+<meta property="og:title" content="Free PNG to PDF Converter – Offline & Secure">
+<meta property="og:description" content="Convert PNG to PDF or PDF to PNG instantly. No uploads, no tracking. Everything happens offline.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://yourdomain.com/">
+<meta property="og:image" content="https://yourdomain.com/preview.png">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Free PNG to PDF Converter – Offline & Secure">
+<meta name="twitter:description" content="Convert PNG to PDF or PDF to PNG instantly. No uploads, no tracking. Everything happens offline.">
+<meta name="twitter:image" content="https://yourdomain.com/preview.png">
+
+      
+<!-- SoftwareApplication Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "PNG to PDF Converter",
+  "operatingSystem": "Any (Web-based)",
+  "applicationCategory": "Utility",
+  "description": "Convert PNG (JPG and JPEG also allowed input) to PDF or PDF to PNG instantly. 100% free, offline, and privacy-friendly.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
+</script>
+
+<!-- FAQ Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is this PNG to PDF converter free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, it is 100% free and works offline in your browser."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are my files uploaded to a server?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. All conversions happen locally on your device for maximum privacy."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does this converter work offline?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Once the page is loaded, the entire conversion process works offline without an internet connection."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is there a file size limit for PNG to PDF conversion?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. To ensure smooth performance, PNG files larger than 20 MB are not processed."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I convert multiple PNG files into one PDF?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. You can select multiple PNG images and they will be merged into a single PDF document."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does this tool support converting PDF pages into PNG images?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. You can upload a PDF and each page will be converted into a separate PNG image."
+      }
+    },
+       {
+      "@type": "Question",
+      "name": "Does this tool support other dataformats for conversion?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. You can upload a JPG or JPEG and it will be converted into a PDF-file."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is my data safe when using this converter?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Your files never leave your device. No uploads, no tracking, and no data collection of any kind."
+      }
+    }
+  ]
+}
+</script>
+
+<!-- External Libraries -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"
+        integrity="sha512-q+4liFwdPC/bNdhUpZx6aXDx/h77yEQtn4I1slHydcbZK34nLaR3cAeYSJshoxIOq3mjEf7xJE8YWIUHMn+oCQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"
+        integrity="sha512-z8IYLHO8bTgFqj+yrPyIJnzBDf7DDhWwiEsk4sY+Oe6J2M+WQequeGS7qioI5vT6rXgVRb4K1UVQC5ER7MKzKQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js"
+        integrity="sha512-BbrZ76UNZq5BhH7LL7pn9A4TKQpQeNCHOo65/akfelcIBbcVvYWOFQKPXIrykE3qZxYjmDX573oa4Ywsc7rpTw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+      <!--
+
+</head>
+<!-- Advertisement from Monetag -->
+<script>(function(s){s.dataset.zone='10811435',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+
+    <div class="container">
 
     <h1>Kostenloser, sicherer PNG‑zu‑PDF‑Konverter</h1>
 
@@ -143,3 +312,19 @@
     </div>
 
 </div>
+
+<body>
+
+
+
+
+
+
+<script src="app.js" defer></script>
+
+</body>
+</html>
+
+
+
+
