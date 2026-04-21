@@ -11,12 +11,14 @@ body {
     margin: 0 auto;
 }
 
-@media (max-width: 100%) {
+@media screen and (max-width: 600px) {
     body {
+        width: 98%;
         padding: 15px;
     }
 
     .container {
+        width: 98%;
         padding: 20px;
     }
 }
