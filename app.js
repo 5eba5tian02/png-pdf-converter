@@ -3,16 +3,6 @@ pdfjsLib.GlobalWorkerOptions.workerSrc =
   "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
 
 
-async function convertHeicToPngBlob(file) {
-    const pngBlob = await window.heicTo({
-        blob: file,
-        type: "image/png",
-        quality: 1.0
-    });
-
-    return pngBlob;
-}
-
 window.addEventListener("dragover", e => e.preventDefault());
 window.addEventListener("drop", e => e.preventDefault());
 
@@ -35,7 +25,7 @@ selectBtn.addEventListener("click", () => {
     const input = document.createElement("input");
     input.type = "file";
     input.multiple = true;
-    input.accept = ".png, .jpg, .jpeg, .HEIC, .heif, .pdf"; // .heic-sequence, .heif-sequence, .octet-stream"; 
+    input.accept = ".png, .jpg, .jpeg, .pdf"; // .heic-sequence, .heif-sequence, .octet-stream"; 
     input.onchange = () => {
         selectedFiles = Array.from(input.files);
         updateStatus();
@@ -184,12 +174,7 @@ convertBtn.addEventListener("click", async () => {
         const allowed = [
   "image/png",
   "image/jpeg",
-  "image/HEIC",
-  "image/heif",
-  "image/heic-sequence",
-  "image/heif-sequence",
-  "application/octet-stream", // many HEIC files use this
-  ""
+  "image/jpg"   
 ];
         const allImages = selectedFiles.every(f => allowed.includes(f.type));
         //console.log(allImages.type);
