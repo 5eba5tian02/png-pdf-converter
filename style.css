@@ -3,18 +3,14 @@ body {
     font-family: Inter, Arial, sans-serif;
     background: #f5f7fa;
     color: #222;
-    display: flex;
-    justify-content: center;
-    padding: 4px;
+    padding: 40px;
 }
 
-    .container {
-        width: 720px;
-        background: #fff;
-        padding: 40px;
-        border-radius: 18px;
-        box-shadow: 0 8px 28px rgba(0,0,0,0.08);
-    }
+   .container {
+    width: 720px;
+    margin: 0 auto;
+}
+
 
     h1 {
         font-size: 28px;
