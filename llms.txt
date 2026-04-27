@@ -1,0 +1,23 @@
+# freepng2pdf.com – LLMs.txt
+
+This file provides AI systems with a curated overview of the most important pages of freepng2pdf.com.  
+All conversions run locally in the browser and no files are uploaded.
+
+## Main Pages
+
+- [Homepage](https://www.freepng2pdf.com/)  
+  : Convert PNG to PDF or PDF to PNG offline in your browser. No uploads, no tracking.
+
+- [German Version](https://www.freepng2pdf.com/de/)  
+  : Deutsche Version des PNG‑zu‑PDF‑Konverters. Offline, sicher und kostenlos.
+
+- [Blog](https://www.freepng2pdf.com/Blog/)  
+  : Articles about file conversion, privacy, and offline tools.
+
+## About the Tool
+
+- Offline conversion using client‑side JavaScript  
+- Supports PNG, JPG, JPEG → PDF  
+- Supports PDF → PNG  
+- No server processing, no data collection
+
