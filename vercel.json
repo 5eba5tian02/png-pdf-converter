@@ -1,0 +1,49 @@
+{
+  "redirects": [
+    {
+      "source": "/Blog/Blog/:path*",
+      "destination": "/blog/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/Blog/:path*",
+      "destination": "/blog/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/blog/Blog/:path*",
+      "destination": "/blog/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/DE/:path*",
+      "destination": "/de/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/De/:path*",
+      "destination": "/de/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/DE",
+      "destination": "/de",
+      "permanent": true
+    },
+    {
+      "source": "/de",
+      "destination": "/de/",
+      "permanent": true
+    },
+    {
+      "source": "/Blog",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/blog",
+      "destination": "/blog/",
+      "permanent": true
+    }
+  ]
+}
