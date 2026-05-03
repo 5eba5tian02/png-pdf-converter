@@ -21,12 +21,4 @@
     <lastmod>2026-04-25</lastmod>
   </url>
 
-  <!-- Blog (falls nur EN) -->
-  <url>
-    <loc>https://www.freepng2pdf.com/Blog/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.freepng2pdf.com/Blog/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.freepng2pdf.com/Blog/"/>
-    <lastmod>2026-04-25</lastmod>
-  </url>
-
 </urlset>
